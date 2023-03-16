@@ -251,6 +251,6 @@ with col4:
    st.write("[@ASHA_FM](https://www.instagram.com/_asha_fm_/)")
 
 with col5:
-   image = Image.open('data/circlelogosmall.jpeg')
+   image = Image.open('data/Circlelogosmall.jpeg')
    st.image(image, caption=None, width=45, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
    st.write("[ASHA.FM](https://www.asha.fm)")
