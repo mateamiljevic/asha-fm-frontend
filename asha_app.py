@@ -17,10 +17,10 @@ unsafe_allow_html=True)
 
 
 ##ASHA FM DEMO DAY VIDEO
-video_file = open('data/video-1626791370.mp4', 'rb')
+video_file = open('data/vidasha.mp4', 'rb')
 video_bytes = video_file.read()
-
 st.video(video_bytes)
+
 
 
 st.write("  ")
@@ -48,28 +48,38 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 ##DESCRIPTION/BACKGROUND TEXT
-with st.container():
-   st.markdown('<p class="big-font">SOLIDARITY & SELECTAS brought to you by ASHA FM</p>', unsafe_allow_html=True)
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.write("  ")
+
+with col2:
+    image = Image.open('data/solidarity.png')
+    st.image(image)
+
+with col3:
+    st.write("  ")
+
+
 st.write("  ")
 st.write("  ")
 
 st.markdown("""
 <style>
 .desc-font {
-    font-size:25px;
+    font-size:20px;
     font-weight: thin;
 }
 </style>
 """, unsafe_allow_html=True)
 
-with st.expander("READ MORE ABOUT OUR AUDIOVISUAL INTERACTIVE PROJECT:"):
-    st.markdown('<p class="desc-font">Asha FM is a revolutionary project that creates cutting-edge audioreactive visual art with the power of AI technology. More than just a platform - it is a way to share your music with the world in a truly immersive way.</p>', unsafe_allow_html=True)
-    st.write(" ")
-    st.markdown('<p class="desc-font">With Asha FM, you can unleash your creativity and bring your music to life like never before. Our AI system generates mind-blowing visuals that pulse with the beat of your music, creating an electrifying experience for you and your audience. And with our radio station releasing new DJ set music videos every Friday, you will never run out of fresh content to explore.</p>', unsafe_allow_html=True)
-    st.write(" ")
-    st.markdown('<p class="desc-font">But Asha FM is more than just a tool for artists. It is a movement. We are all about SOLIDARITY & SELECTAS, bringing people together through the power of art and music. Whether you are a seasoned pro or just starting out, Asha FM is your ticket to a world of endless artistic possibilities.</p>', unsafe_allow_html=True)
-    st.write(" ")
-    st.markdown('<p class="desc-font">So what are you waiting for? Join the revolution and start creating with Asha FM today. The countdown to your next mind-bending artistic adventure starts now.</p>', unsafe_allow_html=True)
+with st.expander("READ MORE ABOUT OUR AUDIOVISUAL INTERACTIVE PROJECT:", expanded=True):
+    file_ = open("data/description.gif", "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+    st.markdown(
+    f'<img src="data:image/gif;base64,{data_url}" alt="description">',
+    unsafe_allow_html=True,)
 
 st.write("  ")
 st.write("  ")
@@ -94,7 +104,7 @@ with col1:
    data_url = base64.b64encode(contents).decode("utf-8")
    file_.close()
    st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url}" alt="maadhav">',
     unsafe_allow_html=True,
 )
 
@@ -105,7 +115,7 @@ with col2:
    data_url = base64.b64encode(contents).decode("utf-8")
    file_.close()
    st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url}" alt="sophia">',
     unsafe_allow_html=True,
 )
 
@@ -116,7 +126,7 @@ with col3:
    data_url = base64.b64encode(contents).decode("utf-8")
    file_.close()
    st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url}" alt="jack">',
     unsafe_allow_html=True,
 )
 
@@ -129,7 +139,7 @@ with col4:
    data_url = base64.b64encode(contents).decode("utf-8")
    file_.close()
    st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url}" alt="matea">',
     unsafe_allow_html=True,
 )
 
