@@ -17,7 +17,7 @@ unsafe_allow_html=True)
 
 
 ##ASHA FM DEMO DAY VIDEO
-video_file = open('data/vidasha.mp4', 'rb')
+video_file = open('data/asha-one.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
@@ -72,7 +72,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-with st.expander("READ MORE ABOUT OUR AUDIOVISUAL INTERACTIVE PROJECT:", expanded=True):
+with st.expander(" ", expanded=True):
     file_ = open("data/description.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
@@ -166,7 +166,7 @@ st.write("  ")
 
 
 ##UPLOAD AUDIO BUTTON
-audio = st.file_uploader("UPLOAD YOUR MUSIC", type=["mp3, WAV, AIFF"])
+audio = st.file_uploader("UPLOAD YOUR MUSIC", type=["mp3","WAV", "AIFF"])
 st.write("  ")
 st.write("  ")
 
@@ -180,13 +180,8 @@ st.write("  ")
 ##st.write("  ")
 
 ##DOWNLOAD BUTTON
-with open("data/video-1626791370.mp4", "rb") as file:
-    btn = st.download_button(
-            label="DOWNLOAD YOUR VIDEO",
-            data=file,
-            file_name="YOUR MUSIC VIDEO",
-            mime="mp4"
-          )
+with open("data/asha-mungos.mp4", "rb") as file:
+    st.download_button('DOWNLOAD YOUR VIDEO', file, file_name='yourvideo.mp4')
 
 st.write("  ")
 st.write("  ")
